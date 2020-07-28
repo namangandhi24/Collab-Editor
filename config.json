@@ -1,0 +1,8 @@
+{
+    "mysql": {
+        "user": "root",
+        "password": "WIKIman1612**#",
+        "host": "localhost",
+        "db": "colabedit"
+    }
+}
