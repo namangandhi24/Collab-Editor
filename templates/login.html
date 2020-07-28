@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- bootstrap reference https://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Login to Collaboration Editor</title>
+
+    <style>
+        body {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card" style="width: 24rem; margin: auto">
+    <div class="card-header">
+        <h5 class="card-title">Collaboration Editor</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Login / Sign up</h6>
+    </div>
+    <div class="card-body">
+        <form action="/auth" method="POST">
+            <p class="card-text">
+                <input name="username" type="text" class="form-control" placeholder="username" required/>
+                <br>
+                <input name="password" type="password" class="form-control" placeholder="password" required/>
+            </p>
+            <button name="submit" value="login" type="submit" class="btn btn-dark">Login</button>
+            <button name="submit" value="signup" type="submit" class="btn btn-primary">Sign up</button>
+        </form>
+        {% if data %}
+            {% if data.message %}
+                <br>
+                <div class="alert alert-warning" role="alert">
+                    {{ data.message }}
+                </div>
+            {% endif %}
+        {% endif %}
+
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
