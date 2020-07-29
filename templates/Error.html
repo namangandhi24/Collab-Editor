@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invalid Credentials</title>
+</head>
+<body>
+    <h2>Invalid Credentials!</h2>
+    <h5>Please Re-Insert Valid Credentials</h5>
+
+
+    {% if data %}
+            {% if data.message %}
+                <br>
+                <div class="alert alert-warning" role="alert">
+                    {{ data.message }}
+                </div>
+            {% endif %}
+        {% endif %}
+    <a href='/'>Login</a>
+</body>
+</html>
+

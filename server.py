@@ -58,7 +58,7 @@ def auth():
             data = {
                 "message": "Wrong username/password combination. Try signing up."
             }
-            return render_template('login.html', data=data)
+            return render_template('Error.html', data=data)
 
         elif len(get_user) == 0 and submit_type == "signup":
             try:
@@ -70,7 +70,7 @@ def auth():
                 data = {
                     "message": "Error while signing up [{}]".format(error)
                 }
-                return render_template('login.html', data=data)
+                return render_template('Error.html', data=data)
 
         elif len(get_user) > 0 and submit_type == "login":
             resp = make_response(redirect("/colabeditor"))
@@ -81,7 +81,7 @@ def auth():
             data = {
                 "message": "User already signed up. Try logging in"
             }
-            return render_template('login.html', data=data)
+            return render_template('Error.html', data=data)
 
     else:
         return 405
